@@ -3,11 +3,12 @@
     <h1>{{ title }}</h1>
     <textarea class="textBox" rows="10" cols="60" v-model="tempText" placeholder="Text goes here..."></textarea>
     <br>
-    <button @click="setText">reverse it</button> <button @click="alertCopy" v-clipboard:copy="finalText">copy text</button>
+    <button @click="alertCopy" v-clipboard:copy="finalText">copy text</button>
     <br>
     <p>{{ tempText }}</p>
     <hr>
     <p>{{ finalText }}</p>
+    <p>{{ desrever }}</p>
     
   </div>
 </template>
@@ -25,13 +26,15 @@ export default {
   mounted: function() {
     console.log('wtfzlol')
   },
-  methods: {
-    setText: function() {
+  computed: {
+    desrever: function() {
       this.finalText = this.tempText
         .split('')
         .reverse()
         .join('')
-    },
+    }
+  },
+  methods: {
     alertCopy() {
       this.$swal({
         text: 'copied to clipboard',

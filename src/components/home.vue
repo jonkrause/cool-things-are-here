@@ -32,7 +32,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #55bcc9;
+  color: #24305e;
 }
 a:hover {
   text-decoration: none;
