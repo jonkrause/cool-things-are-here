@@ -20,16 +20,16 @@
 
     <div class="fade-container">
       <transition name="fade">
-        <div class="descrip" v-if="buttonActive">*click*<br>+1</div>
+        <h5 v-if="buttonActive">*click*<br>+1</h5>
       </transition>
       <transition name="fade">
-        <div class="descrip" v-if="desreverActive">make it sdrawkcab</div>
+        <h5 v-if="desreverActive">make it sdrawkcab</h5>
       </transition>
       <transition name="fade">
-        <div class="descrip" v-if="txtActive">not finished</div>
+        <h5 v-if="txtActive">not finished</h5>
       </transition>
       <transition name="fade">
-        <div class="descrip" v-if="zipActive">u liek comaz?</div>
+        <h5 v-if="zipActive">u liek comaz?</h5>
       </transition>
     </div>
 
@@ -107,7 +107,7 @@
   		rgba(192, 250, 202, 1) 43%
   	);
   } */
-  .descrip {
+  h5 {
     font-family: 'CoreCircus', sans-serif;
     text-transform: uppercase;
     font-size: 80px;

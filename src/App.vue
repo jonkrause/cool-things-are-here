@@ -34,24 +34,24 @@ a:hover {
   color: #fc4445;
 }
 
+
 h5 {
     font-family: 'CoreCircus', sans-serif;
     text-transform: uppercase;
     font-size: 80px;
     text-align: center;
     line-height: 1;
-    /* margin: 0;
+    margin: 0;
     top: 50%;
-    left: 50%; */
+    left: 50%;
     transform: translate(-50%, -50%);
-    position: inherit;
-    display: inline;
+    position: absolute;
     color: #f98ca4;
     text-shadow: -1px -1px 0 #6e1f58, 1px -1px 0 #6e1f58, -1px 1px 0 #6e1f58, 1px 1px 0 #6e1f58, 1px 0px 0px #65f283, 0px 1px 0px #65f283, 2px 1px 0px #65f283, 1px 2px 0px #65f283, 3px 2px 0px #65f283, 2px 3px 0px #65f283, 4px 3px 0px #65f283, 3px 4px 0px #65f283, 5px 4px 0px #65f283, 3px 5px 0px #6e1f58, 6px 5px 0px #6e1f58, -1px 2px 0 black, 0 3px 0 #6e1f58, 1px 4px 0 #6e1f58, 2px 5px 0px #6e1f58, 2px -1px 0 #6e1f58, 3px 0 0 #6e1f58, 4px 1px 0 #6e1f58, 5px 2px 0px #6e1f58, 6px 3px 0 #6e1f58, 7px 4px 0 #6e1f58, 10px 10px 4px #dac249;
     &:after,
     &:before {
       content: attr(data-heading);
-      position: contain;
+      position: absolute;
       overflow: hidden;
       left: 0;
       width: 100%;
@@ -84,4 +84,5 @@ h5 {
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot');
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.ttf') format('truetype');
   }
+  
 </style>
