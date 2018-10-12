@@ -4,16 +4,14 @@
     <p class="subtitle">it's like, a button, you can click...</p>
     <div class="loader" v-if="loading"></div>
     <div class="counter" v-else>
-      <div class="num-style">{{liveCount.count}}</div>
+      <div class="num-style">{{addComma}}</div>
     </div>
     <button @click="addOne">+ 1</button>
   </div>
 </template>
 
 <script>
-  import {
-    db
-  } from '../main'
+  import {db} from '../main'
   export default {
     name: 'abutton',
     data() {
@@ -21,10 +19,11 @@
         title: "let's click a thing",
         count: 0,
         liveCount: null,
-        loading: null
+        loading: null,
+        withComma: null
       }
     },
-    beforeMount: function() {
+    beforeMount: function() {      
       this.liveCount = db.collection('counter').doc('count')
     },
     firestore() {
@@ -32,22 +31,33 @@
         liveCount: db.collection('counter').doc('count')
       }
     },
+    computed: {
+      addComma: function() {
+        return new Intl.NumberFormat('en-IN').format(this.liveCount.count)
+      }
+    },
     methods: {
       addOne() {
         this.count = this.count + 1
-        return db.collection('counter').doc('count').update({
-          count: this.liveCount.count + 1
-        })
+        db.collection('counter').doc('count').update({ count: this.liveCount.count + 1 })
       }
     }
   }
 </script>
 
 <style scoped>
-  .flash {
-    background-color: pink;
-    transition: 0.1s;
+  .noFlash {
+    display: none;
   }
+
+  .flash {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    transition: all 0.5s ease-in-out;
+  }
+  
   button {
     width: 150px;
     background-color: #24305e;
