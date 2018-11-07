@@ -68,7 +68,7 @@ export default {
     axios
       .get(
         'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity' +
-          ''
+          '&key=AIzaSyBAd2Zzw-ARDak1lWaF-9AM1er7e8HlK-o'
       )
       .then(response => {
         this.fontList = response.data.items
