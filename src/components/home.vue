@@ -16,6 +16,14 @@
 
     <span @mouseover="zipActive = !zipActive" @mouseleave="zipActive = !zipActive">
       <router-link to="zipcoma">zipcoma</router-link>
+      </span> // 
+
+    <span @mouseover="chuckbase = !chuckbase" @mouseleave="chuckbase = !chuckbase">
+      <router-link to="chuckbase">chuckbase</router-link>
+      </span> // 
+
+    <span @mouseover="whatevil = !whatevil" @mouseleave="whatevil = !whatevil">
+      <router-link to="whatevil">whatevil</router-link>
       </span>
 
     <div class="fade-container">
@@ -31,6 +39,12 @@
       <transition name="fade">
         <h5 v-if="zipActive">u liek comaz?</h5>
       </transition>
+      <transition name="fade">
+        <h5 v-if="chuckbase" key="chuckbase">how does it feel?</h5>
+      </transition>
+      <transition name="fade">
+        <h5 v-if="whatevil" key="whatevil">who knows?</h5>
+      </transition>
     </div>
 
   </div>
@@ -45,7 +59,9 @@
         buttonActive: false,
         desreverActive: false,
         txtActive: false,
-        zipActive: false
+        zipActive: false,
+        chuckbase: false,
+        whatevil: false
       }
     },
     methods: {}

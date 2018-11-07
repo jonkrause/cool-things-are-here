@@ -5,6 +5,8 @@ import desrever from '@/components/desrever'
 import zipcoma from '@/components/zipcoma'
 import txtreckr from '@/components/txtreckr'
 import abutton from '@/components/abutton'
+import chuckbase from '@/components/chuckbase'
+import whatevil from '@/components/whatevil'
 
 Vue.use(Router)
 
@@ -35,6 +37,16 @@ export default new Router({
       path: '/abutton',
       name: 'abutton',
       component: abutton
+    },
+    {
+      path: '/chuckbase',
+      name: 'chuckbase',
+      component: chuckbase
+    },
+    {
+      path: '/whatevil',
+      name: 'whatevil',
+      component: whatevil
     }
   ]
 })

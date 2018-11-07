@@ -9,6 +9,7 @@ import VueFire from 'vuefire'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
+
 Vue.use(VueFire)
 Vue.use(VueClipboard)
 Vue.use(VueSweetAlert2)
