@@ -5,35 +5,39 @@
         <div class="slidecontainer">
           <h4>Font Size</h4>
           <div class="sliderForm">
-            
             <input type="range" min="0" max="100" value="50" class="slider" v-model="fontSize">
-            <input type="number" min="0" max="100" v-model="fontSize"><div class="clearButton" @click="fontSize=56">Reset</div>
+            <input type="number" min="0" max="100" v-model="fontSize">
+            <div class="clearButton" @click="fontSize=56">Reset</div>
           </div>
-          
           <h4>Font Weight</h4>
           <div class="sliderForm">
-          <input type="range" min="100" max="900" value="50" class="slider" step="100" v-model="fontWeight">
-          <input type="number" min="0" max="900" step="100" v-model="fontWeight"> <div class="clearButton" @click="fontWeight=100">Reset</div>
+            <input type="range" min="100" max="900" value="50" class="slider" step="100" v-model="fontWeight">
+            <input type="number" min="0" max="900" step="100" v-model="fontWeight">
+            <div class="clearButton" @click="fontWeight=100">Reset</div>
           </div>
           <h4>Letter Spacing</h4>
           <div class="sliderForm">
-          <input type="range" min="-50" max="100" value="0" class="slider" v-model="letterSpacing">
-          <input type="number" min="-50" max="100" v-model="letterSpacing"> <div class="clearButton" @click="letterSpacing=0">Reset</div>
+            <input type="range" min="-50" max="100" value="0" class="slider" v-model="letterSpacing">
+            <input type="number" min="-50" max="100" v-model="letterSpacing">
+            <div class="clearButton" @click="letterSpacing=0">Reset</div>
           </div>
           <h4>Shadow X</h4>
           <div class="sliderForm">
-          <input type="range" min="-100" max="100" value="0" step="0.1" class="slider" v-model="shadowX">
-          <input type="number" min="-100" max="100" v-model="shadowX"> <div class="clearButton" @click="shadowX=0">Reset</div>
+            <input type="range" min="-100" max="100" value="0" step="0.1" class="slider" v-model="shadowX">
+            <input type="number" min="-100" max="100" v-model="shadowX">
+            <div class="clearButton" @click="shadowX=0">Reset</div>
           </div>
           <h4>Shadow Y</h4>
           <div class="sliderForm">
-          <input type="range" min="-100" max="100" value="0" step="0.1" class="slider" v-model="shadowY">
-          <input type="number" min="-100" max="100" v-model="shadowY"> <div class="clearButton" @click="shadowY=0">Reset</div>
+            <input type="range" min="-100" max="100" value="0" step="0.1" class="slider" v-model="shadowY">
+            <input type="number" min="-100" max="100" v-model="shadowY">
+            <div class="clearButton" @click="shadowY=0">Reset</div>
           </div>
           <h4>Shadow Spread</h4>
           <div class="sliderForm">
-          <input type="range" min="0" max="100" value="0" class="slider" v-model="shadowSpread">
-          <input type="number" min="0" max="100" v-model="shadowSpread"> <div class="clearButton" @click="shadowSpread=0">Reset</div>
+            <input type="range" min="0" max="100" value="0" class="slider" v-model="shadowSpread">
+            <input type="number" min="0" max="100" v-model="shadowSpread">
+            <div class="clearButton" @click="shadowSpread=0">Reset</div>
           </div>
         </div>
       </div>
@@ -42,8 +46,8 @@
           <input v-model="previewText" placeholder="Type Here..." class="textInput">
           <h4>Edit Text</h4>
           <select v-model="currentFont">
-              <option v-for="fonts in fontList" :key="fonts.family" :value="fonts.family">{{fonts.family}}</option>
-            </select>
+                <option v-for="fonts in fontList" :key="fonts.family" :value="fonts.family">{{fonts.family}}</option>
+              </select>
           <h4>Select Font</h4>
           <!-- <h4 class="cssTitle">CSS</h4> -->
           <div class="copyText">
@@ -69,32 +73,27 @@
           </div>
           <div class="quickButtons">
             <input type="checkbox" v-model="transitionPreview" :class="{transitionPreview: transitionPreview}"><small>Animate Changes</small>
-        <div class="clearButton" @click="clearAll">Clear All Settings</div>
-        <div class="clearButton" @click="randomFont">Random Font</div>
-        <div class="clearButton" @click="randomStyles">Random Font Styles</div>
-        <div class="clearButton" @click="randomColor">Random Colors</div>
-        <div class="clearButton" @click="randomValues">Random Everything</div>
-        
-      </div>
+            <div class="clearButton" @click="clearAll">Clear All Settings</div>
+            <div class="clearButton" @click="randomFont">Random Font</div>
+            <div class="clearButton" @click="randomStyles">Random Font Styles</div>
+            <div class="clearButton" @click="randomColor">Random Colors</div>
+            <div class="clearButton" @click="randomValues">Random Everything</div>
+          </div>
         </div>
-        
       </div>
       <div :class="{transitionPreview: transitionPreview}" class="preview" :style="{backgroundColor:previewBackground}">
         <p :style="{ 
-                fontSize: fontSize + 'px', 
-                fontWeight: fontWeight,
-                letterSpacing: letterSpacing + 'px', 
-                textShadow: shadowX + 'px ' + shadowY + 'px ' + shadowSpread + 'px ' + shadowColor, 
-                fontFamily: currentFont,
-                color: textColor
-                }">
+                  fontSize: fontSize + 'px', 
+                  fontWeight: fontWeight,
+                  letterSpacing: letterSpacing + 'px', 
+                  textShadow: shadowX + 'px ' + shadowY + 'px ' + shadowSpread + 'px ' + shadowColor, 
+                  fontFamily: currentFont,
+                  color: textColor
+                  }">
           {{previewText}}<br>
         </p>
       </div>
-
-      
     </div>
-    
     <div class="details">
       <strong>currentFont:</strong> {{currentFont}}<br> <strong>cssFont:</strong> {{cssFont}}<br> <strong>newFontUrl:</strong> {{newFontUrl}}<br> <strong>cssImport:</strong> {{cssImport}} {{spaceReplace}}
     </div>
@@ -169,14 +168,14 @@
         this.previewBackground = '#ffffff'
       },
       randomValues() {
-        let weightArray = [100,200,300,400,500,600,700,800,900]
+        let weightArray = [100, 200, 300, 400, 500, 600, 700, 800, 900]
         let randomWeight = weightArray[Math.floor(weightArray.length * Math.random())]
         let randomFont = this.fontList[Math.floor(this.fontList.length * Math.random())]
         let hex = '0123456789abcdef'
         let randomFontColor = '#'
         let randomShadowColor = '#'
         let randomBackgroundColor = '#'
-        for(var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++) {
           randomFontColor += hex[Math.floor(Math.random() * 16)]
           randomShadowColor += hex[Math.floor(Math.random() * 16)]
           randomBackgroundColor += hex[Math.floor(Math.random() * 16)]
@@ -191,7 +190,7 @@
         this.fontWeight = randomWeight
         this.letterSpacing = Math.floor(Math.random() * 100 + 1)
         this.shadowX = Math.floor(Math.random() * 201) - 100
-        this.shadowY = Math.floor(Math.random() * 201) -100
+        this.shadowY = Math.floor(Math.random() * 201) - 100
         this.shadowSpread = Math.floor(Math.random() * 30 + 1)
         this.fontColor = '#000000'
       },
@@ -201,13 +200,13 @@
         this.cssFont = randomFont.family
       },
       randomStyles() {
-        let weightArray = [100,200,300,400,500,600,700,800,900]
+        let weightArray = [100, 200, 300, 400, 500, 600, 700, 800, 900]
         let randomWeight = weightArray[Math.floor(weightArray.length * Math.random())]
         this.fontSize = Math.floor(Math.random() * 100 + 1)
         this.fontWeight = randomWeight
         this.letterSpacing = Math.floor(Math.random() * 100 + 1)
         this.shadowX = Math.floor(Math.random() * 201) - 100
-        this.shadowY = Math.floor(Math.random() * 201) -100
+        this.shadowY = Math.floor(Math.random() * 201) - 100
         this.shadowSpread = Math.floor(Math.random() * 30 + 1)
       },
       randomColor() {
@@ -215,7 +214,7 @@
         let randomFontColor = '#'
         let randomShadowColor = '#'
         let randomBackgroundColor = '#'
-        for(var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++) {
           randomFontColor += hex[Math.floor(Math.random() * 16)]
           randomShadowColor += hex[Math.floor(Math.random() * 16)]
           randomBackgroundColor += hex[Math.floor(Math.random() * 16)]
@@ -440,7 +439,6 @@
     letter-spacing: 0.6px;
     margin-right: 20px;
   }
-
   .transitionPreview p {
     transition: .3s;
   }
